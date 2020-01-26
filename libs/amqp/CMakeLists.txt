@@ -47,6 +47,7 @@ set (amqp_assembler_sources
 
 set (amqp_serialiser_sources
         src/serialiser/ISerialiser.cxx
+        src/serialiser/SerializationContext.cxx
         src/serialiser/serialisers/property-serialisers/StringPropertySerialiserBase.cxx
         src/serialiser/serialisers/property-serialisers/BoolPropertySerialiserBase.cxx
         src/serialiser/serialisers/property-serialisers/DoublePropertySerialiserBase.cxx
