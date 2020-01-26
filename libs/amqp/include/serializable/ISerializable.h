@@ -2,11 +2,33 @@
 
 /******************************************************************************/
 
-namespace amqp::serializable {
+#include <corda-utils/include/types.h>
 
-    class ISerializable {
+#include "amqp/include/AMQPBlob.h"
+
+/******************************************************************************
+ *
+ * Forward declarations
+ *
+ ******************************************************************************/
+
+namespace amqp::serialiser {
+
+    class ISerialisationContext;
+
+}
+
+/******************************************************************************
+ *
+ * c;ass ISerialisable
+ *
+ ******************************************************************************/
+
+namespace amqp::serialisable {
+
+    class ISerialisable {
         public :
-            virtual char * serialize() const = 0;
+            virtual uPtr<AMQPBlob> serialize (amqp::serialiser::ISerialisationContext &) const = 0;
     };
 
 }
