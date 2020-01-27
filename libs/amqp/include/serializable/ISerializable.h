@@ -20,8 +20,16 @@ namespace amqp::serialisable {
             std::string m_fingerprint;
 
         public :
+            explicit ISerialisable (std::string fingerprint_)
+                : m_fingerprint (std::move (fingerprint_))
+            { }
+
+            const decltype (m_fingerprint) & fingerprint() const {
+                return m_fingerprint;
+            }
+
             /**
-             * Main interface for serializable objects. It woule be expected
+             * Main interface for serializable objects. It would be expected
              * that this is invoked for objects obj.serialise (context)
              */
             uPtr<AMQPBlob>
